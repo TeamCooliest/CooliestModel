@@ -18,6 +18,7 @@ dimensions      [0 2 -2 0 0 0 0];
 
 internalField   uniform 0;
 
+// these are the boundary fields
 boundaryField
 {
     movingWall
