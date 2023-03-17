@@ -1,0 +1,6 @@
+/home1/07645/eesha_n/mainclassrepo/OpenFOAM/current/cavity/cavity
+Wed Feb  9 17:42:12 CST 2022
+Running blockMesh on /home1/07645/eesha_n/mainclassrepo/OpenFOAM/current/cavity/cavity
+Running checkMesh on /home1/07645/eesha_n/mainclassrepo/OpenFOAM/current/cavity/cavity
+Running icoFoam on /home1/07645/eesha_n/mainclassrepo/OpenFOAM/current/cavity/cavity
+Wed Feb  9 17:42:16 CST 2022
