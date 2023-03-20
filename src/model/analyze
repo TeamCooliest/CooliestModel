@@ -31,36 +31,36 @@ if __name__ == '__main__':
                            required=True,
                            help='Name of the input file.')
     # Arguments ----------------------------
-    # TODO add units in all of the help strings
+    # help strings include SI units
     args = subparser.add_parser('args')
     args.add_argument('--mdot',
                       type=float,
                       required=True,
-                      help='Mass flow rate (put units here).')
+                      help='Mass flow rate (kg/s).')
     args.add_argument('--Cp',
                       type=float,
                       required=True,
-                      help='Pressure coefficient (put units here).')
+                      help='Pressure coefficient (dimensionless).')
     args.add_argument('--Tin',
                       type=float,
                       required=True,
-                      help='Inlet temperature (put units here).')
+                      help='Inlet temperature (K).')
     args.add_argument('--Tout',
                       type=float,
                       required=True,
-                      help='Outlet temperature (put units here).')
+                      help='Outlet temperature (K).')
     args.add_argument('--Twall',
                       type=float,
                       required=True,
-                      help='Wall temperature (put units here).')
+                      help='Wall temperature (K).')
     args.add_argument('--Tmid',
                       type=float,
                       required=True,
-                      help='Middle temperature (put units here).')
+                      help='Middle temperature (K).')
     args.add_argument('-A', '--area',
                       type=float,
                       required=True,
-                      help='Cross-sectional area (put units here).')
+                      help='Cross-sectional area (m^2).')
     # SOLVE ================================
     pargs = parser.parse_args()
     if (pargs.subparser == 'inputfile'):
