@@ -2,11 +2,11 @@
 
 import argparse
 
-# TODO solve for h (I think lol) @zoe/@alessandra
+# TODO come up with something better... are we solving for h? @zoe/@alessandra
 def solve(mdot, Cp, Tin, Tout, Twall, Tmid, area):
     # NOTE there might be more inputs than these... if there are,
     # please make changes where necessary... good luck (●'◡'●)
-    h = 0
+    h = (mdot * Cp * (Tout - Tin)) / (A * (Twall - Tmid))
     return h
 
 # TODO design an input file and make this parse it @conor
