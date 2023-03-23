@@ -20,7 +20,7 @@
 
 #SBATCH -A COE-Senior-Design-20       # Allocation name (req'd if you have more than 1)
 
-# Other commands must follow all #SBATCH directives...
+# Other commands must follow all #SBATCH directives...  OK
 
 module purge
 module load intel/18.0.2  libfabric/1.7.0  impi/18.0.2 openfoam/7.0
