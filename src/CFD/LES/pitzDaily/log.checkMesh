@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Mar 23 2023
-Time   : 13:29:31
-Host   : "c411-063.stampede2.tacc.utexas.edu"
-PID    : 142702
+Time   : 13:45:56
+Host   : "c412-111.stampede2.tacc.utexas.edu"
+PID    : 32521
 I/O    : uncollated
 Case   : /home1/08376/lew2547/CooliestModel/src/CFD/LES/pitzDaily
 nProcs : 1
@@ -26,11 +26,11 @@ Create polyMesh for time = 0
 Time = 0
 
 Mesh stats
-    points:           25012
+    points:           2892
     internal points:  0
-    faces:            49180
-    internal faces:   24170
-    cells:            12225
+    faces:            5501
+    internal faces:   2611
+    cells:            1352
     faces per cell:   6
     boundary patches: 5
     point zones:      0
@@ -38,7 +38,7 @@ Mesh stats
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     12225
+    hexahedra:     1352
     prisms:        0
     wedges:        0
     pyramids:      0
@@ -56,26 +56,26 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
     Patch               Faces    Points   Surface topology                  
-    inlet               30       62       ok (non-closed singly connected)  
-    outlet              57       116      ok (non-closed singly connected)  
-    upperWall           223      448      ok (non-closed singly connected)  
-    lowerWall           250      502      ok (non-closed singly connected)  
-    frontAndBack        24450    25012    ok (non-closed singly connected)  
+    inlet               10       22       ok (non-closed singly connected)  
+    outlet              19       40       ok (non-closed singly connected)  
+    upperWall           74       150      ok (non-closed singly connected)  
+    lowerWall           83       168      ok (non-closed singly connected)  
+    frontAndBack        2704     2892     ok (non-closed singly connected)  
 
 Checking geometry...
     Overall domain bounding box (-0.0206 -0.0254 -0.0005) (0.29 0.0254 0.0005)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (-1.74458e-19 3.10465e-18 2.11177e-15) OK.
-    Max cell openness = 2.21044e-16 OK.
-    Max aspect ratio = 8.1407 OK.
-    Minimum face area = 1.68589e-07. Maximum face area = 5.14451e-06.  Face area magnitudes OK.
-    Min volume = 1.6902e-10. Max volume = 3.83579e-09.  Total volume = 1.4516e-05.  Cell volumes OK.
-    Mesh non-orthogonality Max: 5.95045 average: 1.63034
+    Boundary openness (-1.49536e-19 -3.30403e-18 2.71728e-16) OK.
+    Max cell openness = 3.03373e-16 OK.
+    Max aspect ratio = 8.28224 OK.
+    Minimum face area = 4.92174e-07. Maximum face area = 3.69048e-05.  Face area magnitudes OK.
+    Min volume = 1.67327e-09. Max volume = 3.69048e-08.  Total volume = 1.4516e-05.  Cell volumes OK.
+    Mesh non-orthogonality Max: 5.89257 average: 1.49628
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 0.260575 OK.
+    Max skewness = 0.258022 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.

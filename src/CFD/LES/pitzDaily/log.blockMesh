@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Mar 23 2023
-Time   : 13:29:25
-Host   : "c411-063.stampede2.tacc.utexas.edu"
-PID    : 142687
+Time   : 13:45:50
+Host   : "c412-111.stampede2.tacc.utexas.edu"
+PID    : 32504
 I/O    : uncollated
 Case   : /home1/08376/lew2547/CooliestModel/src/CFD/LES/pitzDaily
 nProcs : 1
@@ -21,6 +21,8 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+Deleting polyMesh directory
+    "/home1/08376/lew2547/CooliestModel/src/CFD/LES/pitzDaily/constant/polyMesh"
 Creating block mesh from
     "/home1/08376/lew2547/CooliestModel/src/CFD/LES/pitzDaily/system/blockMeshDict"
 Creating block edges
@@ -45,24 +47,24 @@ Creating merge list .
 Creating polyMesh from blockMesh
 Creating points with scale 0.001
     Block 0 cell size :
-        i : 0.00158284 .. 0.000791418
-        j : 0.000318841 .. 0.000420268
+        i : 0.00472205 .. 0.00236103
+        j : 0.00115083 .. 0.0011156
         k : 0.001
     Block 1 cell size :
-        i : 0.000528387 .. 0.00211355
-        j : 0.00112889 .. 0.000360188 0.00112841 .. 0.000361677 0.00112889 .. 0.000360188 0.00112841 .. 0.000361677 
+        i : 0.00158237 .. 0.00632948
+        j : 0.00338667 .. 0.00105064 0.00338233 .. 0.00106425 0.00338667 .. 0.00105064 0.00338233 .. 0.00106425 
         k : 0.001
     Block 2 cell size :
-        i : 0.000528387 .. 0.00211355
-        j : 0.000318841 .. 0.000420268 0.000320918 .. 0.000419851 0.000318841 .. 0.000420268 0.000320918 .. 0.000419851 
+        i : 0.00158237 .. 0.00632948 0.00158246 .. 0.00632986 0.00158237 .. 0.00632948 0.00158246 .. 0.00632986 
+        j : 0.00115083 .. 0.0011156 0.001168 .. 0.00111281 0.00115083 .. 0.0011156 0.001168 .. 0.00111281 
         k : 0.001
     Block 3 cell size :
-        i : 0.0020578 .. 0.00514451 0.00205699 .. 0.00514248 0.0020578 .. 0.00514451 0.00205699 .. 0.00514248 
-        j : 0.000940741 .. 0.000940741 0.0009328 .. 0.0009328 0.000940741 .. 0.000940741 0.0009328 .. 0.0009328 
+        i : 0.00638608 .. 0.0159652 0.0063788 .. 0.015947 0.00638608 .. 0.0159652 0.0063788 .. 0.015947 
+        j : 0.00282222 .. 0.00282222 0.00274829 .. 0.00274829 0.00282222 .. 0.00282222 0.00274829 .. 0.00274829 
         k : 0.001
     Block 4 cell size :
-        i : 0.0020466 .. 0.00511651 0.00204663 .. 0.00511656 0.0020466 .. 0.00511651 0.00204663 .. 0.00511656 
-        j : 0.00112889 .. 0.000257962 0.00111936 .. 0.000255785 0.00112889 .. 0.000257962 0.00111936 .. 0.000255785 
+        i : 0.00635132 .. 0.0158783 0.00635194 .. 0.0158798 0.00635132 .. 0.0158783 0.00635194 .. 0.0158798 
+        j : 0.00338667 .. 0.000753085 0.00329795 .. 0.000733357 0.00338667 .. 0.000753085 0.00329795 .. 0.000733357 
         k : 0.001
 Creating cells
 Creating patches
@@ -74,18 +76,18 @@ Writing polyMesh
 Mesh Information
 ----------------
   boundingBox: (-0.0206 -0.0254 -0.0005) (0.29 0.0254 0.0005)
-  nPoints: 25012
-  nCells: 12225
-  nFaces: 49180
-  nInternalFaces: 24170
+  nPoints: 2892
+  nCells: 1352
+  nFaces: 5501
+  nInternalFaces: 2611
 ----------------
 Patches
 ----------------
-  patch 0 (start: 24170 size: 30) name: inlet
-  patch 1 (start: 24200 size: 57) name: outlet
-  patch 2 (start: 24257 size: 223) name: upperWall
-  patch 3 (start: 24480 size: 250) name: lowerWall
-  patch 4 (start: 24730 size: 24450) name: frontAndBack
+  patch 0 (start: 2611 size: 10) name: inlet
+  patch 1 (start: 2621 size: 19) name: outlet
+  patch 2 (start: 2640 size: 74) name: upperWall
+  patch 3 (start: 2714 size: 83) name: lowerWall
+  patch 4 (start: 2797 size: 2704) name: frontAndBack
 
 End
 
