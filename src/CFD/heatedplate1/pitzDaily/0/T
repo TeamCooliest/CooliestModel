@@ -35,16 +35,16 @@ boundaryField
 
     upperWall
     {
-        type            externalWallHeatFluxTemperature;
-        mode            flux;
-        q               uniform 500;
-        kappaMethod     fluidThermo;
+        type            fixedValue;
         value           uniform 300;
     }
 
     lowerWall
     {
-        type            fixedValue;
+        type            externalWallHeatFluxTemperature;
+        mode            flux;
+        q               uniform 500;
+        kappaMethod     fluidThermo;
         value           uniform 300;
     }
 
