@@ -1,0 +1,6 @@
+/home1/08376/lew2547/CooliestModel/src/CFD/hotRoom
+Fri Mar 24 08:26:53 CDT 2023
+Running blockMesh on /home1/08376/lew2547/CooliestModel/src/CFD/hotRoom
+Running setFields on /home1/08376/lew2547/CooliestModel/src/CFD/hotRoom
+Running buoyantPimpleFoam on /home1/08376/lew2547/CooliestModel/src/CFD/hotRoom
+Fri Mar 24 08:27:24 CDT 2023

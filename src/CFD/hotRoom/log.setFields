@@ -1,0 +1,37 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-49b2b3b8b082
+Exec   : setFields
+Date   : Mar 24 2023
+Time   : 08:27:06
+Host   : "c401-091.stampede2.tacc.utexas.edu"
+PID    : 433
+I/O    : uncollated
+Case   : /home1/08376/lew2547/CooliestModel/src/CFD/hotRoom
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading setFieldsDict
+
+Setting field default values
+    Setting internal values of volScalarField T
+
+Setting field region values
+    Adding faces with centre within boxes 1((4.5 -1000 4.5) (5.5 1e-05 5.5))
+    Setting patchField values of volScalarField T
+    On patch floor set 4 values
+
+End
+
