@@ -43,7 +43,7 @@ boundaryField
     {
         type            externalWallHeatFluxTemperature;
         mode            flux;
-        q               uniform 500;
+        q               uniform 5000;
         kappaMethod     fluidThermo;
         value           uniform 300;
     }
