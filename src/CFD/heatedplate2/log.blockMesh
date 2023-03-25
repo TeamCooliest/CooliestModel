@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Mar 25 2023
-Time   : 11:22:04
-Host   : "c408-004.stampede2.tacc.utexas.edu"
-PID    : 173413
+Time   : 11:30:15
+Host   : "c408-003.stampede2.tacc.utexas.edu"
+PID    : 34196
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate2
 nProcs : 1
@@ -21,6 +21,8 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+Deleting polyMesh directory
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate2/constant/polyMesh"
 Creating block mesh from
     "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate2/system/blockMeshDict"
 Creating block edges
