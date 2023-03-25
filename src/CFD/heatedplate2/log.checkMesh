@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Mar 25 2023
-Time   : 18:21:53
-Host   : "c401-061.stampede2.tacc.utexas.edu"
-PID    : 222432
+Time   : 18:37:17
+Host   : "c407-012.stampede2.tacc.utexas.edu"
+PID    : 127420
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate2
 nProcs : 1
