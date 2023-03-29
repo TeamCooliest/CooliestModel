@@ -24,7 +24,7 @@ boundaryField
     {
         type            turbulentInlet;
         referenceField  uniform (0.1 0.1 0);
-        fluctuationScale (0.01 0.01 0.01);
+        fluctuationScale (0.1 0.1 0.1);
         value           uniform (0.1 0 0);
     }
 
