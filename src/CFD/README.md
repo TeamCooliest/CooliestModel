@@ -28,4 +28,7 @@ rhoPimpleFoam, adapted from #5 to modify
 
 # 7. heatedplate3
 
-rhoPimpleFoam, moved from externalHeatFlux... to atmTurbulentHeatFluxTemperature (boundary condition)
+rhoPimpleFoam, moved from externalHeatFlux... to fixedGradient (boundary condition)
+
+
+

@@ -41,10 +41,8 @@ boundaryField
 
     lowerWall
     {
-        type            atmTurbulentHeatFluxTemperature;
-        heatSource      flux;
-        alphaEff        alphaEff;
-        q               uniform 400;
+        type            fixedGradient;
+        gradient        uniform 5000;
         value           uniform 300;
     }
 
