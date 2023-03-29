@@ -25,3 +25,7 @@ rhoPimpleFoam, adapted from #4 to square blockmesh
 # 6. heatedplate2
 
 rhoPimpleFoam, adapted from #5 to modify
+
+# 7. heatedplate3
+
+rhoPimpleFoam, moved from externalHeatFlux... to atmTurbulentHeatFluxTemperature (boundary condition)
