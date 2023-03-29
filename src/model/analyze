@@ -6,7 +6,7 @@ import argparse
 def solve(mdot, Cp, Tin, Tout, Twall, Tmid, area):
     # NOTE there might be more inputs than these... if there are,
     # please make changes where necessary... good luck (●'◡'●)
-    h = (mdot * Cp * (Tout - Tin)) / (A * (Twall - Tmid))
+    h = (mdot * Cp * (Tout - Tin)) / (area * (Twall - Tmid))
     return h
 
 # TODO design an input file and make this parse it @conor
