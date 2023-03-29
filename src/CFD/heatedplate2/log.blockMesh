@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
-Date   : Mar 25 2023
-Time   : 18:42:15
-Host   : "c411-074.stampede2.tacc.utexas.edu"
-PID    : 266999
+Date   : Mar 29 2023
+Time   : 12:19:00
+Host   : "c469-073.stampede2.tacc.utexas.edu"
+PID    : 227544
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate2
 nProcs : 1
@@ -47,8 +47,8 @@ Creating merge list .
 Creating polyMesh from blockMesh
 Creating points with scale 0.001
     Block 0 cell size :
-        i : 5e-05 .. 5e-05
-        j : 5e-05 .. 5e-05
+        i : 2.5e-05 .. 2.5e-05
+        j : 2.5e-05 .. 2.5e-05
         k : 0.0002
 Creating cells
 Creating patches
@@ -60,18 +60,18 @@ Writing polyMesh
 Mesh Information
 ----------------
   boundingBox: (0 0 -0.0001) (0.001 0.001 0.0001)
-  nPoints: 882
-  nCells: 400
-  nFaces: 1640
-  nInternalFaces: 760
+  nPoints: 3362
+  nCells: 1600
+  nFaces: 6480
+  nInternalFaces: 3120
 ----------------
 Patches
 ----------------
-  patch 0 (start: 760 size: 20) name: upperWall
-  patch 1 (start: 780 size: 20) name: lowerWall
-  patch 2 (start: 800 size: 20) name: inlet
-  patch 3 (start: 820 size: 20) name: outlet
-  patch 4 (start: 840 size: 800) name: frontAndBack
+  patch 0 (start: 3120 size: 40) name: upperWall
+  patch 1 (start: 3160 size: 40) name: lowerWall
+  patch 2 (start: 3200 size: 40) name: inlet
+  patch 3 (start: 3240 size: 40) name: outlet
+  patch 4 (start: 3280 size: 3200) name: frontAndBack
 
 End
 

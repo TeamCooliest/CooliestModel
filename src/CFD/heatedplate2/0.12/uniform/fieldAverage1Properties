@@ -17,14 +17,14 @@ FoamFile
 
 U
 {
-    totalIter       1201;
-    totalTime       0.1201;
+    totalIter       2401;
+    totalTime       0.12005;
 }
 
 p
 {
-    totalIter       1201;
-    totalTime       0.1201;
+    totalIter       2401;
+    totalTime       0.12005;
 }
 
 
