@@ -31,4 +31,3 @@ rhoPimpleFoam, adapted from #5 to modify
 rhoPimpleFoam, moved from externalHeatFlux... to fixedGradient (boundary condition)
 
 
-
