@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
+import pandas as pd
+import numpy as np
+
 
 # TODO come up with something better... are we solving for h? @zoe/@alessandra
 def solve(mdot, Cp, Tin, Tout, Twall, Tmid, area):
@@ -9,70 +12,85 @@ def solve(mdot, Cp, Tin, Tout, Twall, Tmid, area):
     h = (mdot * Cp * (Tout - Tin)) / (area * (Twall - Tmid))
     return h
 
+
 # TODO design an input file and make this parse it @conor
 def readInputfile(filename):
-    mdot  = 0
-    Cp    = 0
-    Tin   = 0
-    Tout  = 0
+    mdot = 0
+    Cp = 0
+    Tin = 0
+    Tout = 0
     Twall = 0
-    Tmid  = 0
-    area  = 0
+    Tmid = 0
+    area = 0
     return mdot, Cp, Tin, Tout, Twall, Tmid, area
 
-if __name__ == '__main__':
+
+def getProperties(fluid_name, temp):
+    input_path = f"../../data/{fluid_name}_table.xlsx"
+    df = pd.read_excel(input_path)
+    if temp in df["temp_k"].values:
+        # do everything normally pull values from table
+        cp = df.loc[df["temp_k"] == temp, "cp"].values[0]
+        k = df.loc[df["temp_k"] == temp, "k"].values[0]
+        pr = df.loc[df["temp_k"] == temp, "pr"].values[0]
+        nu_k = df.loc[df["temp_k"] == temp, "nu_k"].values[0]
+        rho = df.loc[df["temp_k"] == temp, "rho"].values[0]
+
+    else:
+        cp = np.interp(temp, df["temp_k"], df["cp"])
+        k = np.interp(temp, df["temp_k"], df["k"])
+        pr = np.interp(temp, df["temp_k"], df["pr"])
+        nu_k = np.interp(temp, df["temp_k"], df["nu_k"])
+        rho = np.interp(temp, df["temp_k"], df["rho"])
+
+    return cp, k, pr, nu_k, rho
+
+
+if __name__ == "__main__":
     # ARG PARSING ==========================
-    parser = argparse.ArgumentParser(description='Team Cooliest\'s ~ proprietary ~ model.')
-    subparser = parser.add_subparsers(dest='subparser')
+    parser = argparse.ArgumentParser(
+        description="Team Cooliest's ~ proprietary ~ model."
+    )
+    subparser = parser.add_subparsers(dest="subparser")
     # Input File ---------------------------
-    inputfile = subparser.add_parser('inputfile')
-    inputfile.add_argument('-f', '--filename',
-                           type=str,
-                           required=True,
-                           help='Name of the input file.')
+    inputfile = subparser.add_parser("inputfile")
+    inputfile.add_argument(
+        "-f", "--filename", type=str, required=True, help="Name of the input file."
+    )
     # Arguments ----------------------------
     # help strings include SI units
-    args = subparser.add_parser('args')
-    args.add_argument('--mdot',
-                      type=float,
-                      required=True,
-                      help='Mass flow rate (kg/s).')
-    args.add_argument('--Cp',
-                      type=float,
-                      required=True,
-                      help='Pressure coefficient (dimensionless).')
-    args.add_argument('--Tin',
-                      type=float,
-                      required=True,
-                      help='Inlet temperature (K).')
-    args.add_argument('--Tout',
-                      type=float,
-                      required=True,
-                      help='Outlet temperature (K).')
-    args.add_argument('--Twall',
-                      type=float,
-                      required=True,
-                      help='Wall temperature (K).')
-    args.add_argument('--Tmid',
-                      type=float,
-                      required=True,
-                      help='Middle temperature (K).')
-    args.add_argument('-A', '--area',
-                      type=float,
-                      required=True,
-                      help='Cross-sectional area (m^2).')
+    args = subparser.add_parser("args")
+    args.add_argument(
+        "--mdot", type=float, required=True, help="Mass flow rate (kg/s)."
+    )
+    args.add_argument(
+        "--Cp", type=float, required=True, help="Pressure coefficient (dimensionless)."
+    )
+    args.add_argument("--Tin", type=float, required=True, help="Inlet temperature (K).")
+    args.add_argument(
+        "--Tout", type=float, required=True, help="Outlet temperature (K)."
+    )
+    args.add_argument(
+        "--Twall", type=float, required=True, help="Wall temperature (K)."
+    )
+    args.add_argument(
+        "--Tmid", type=float, required=True, help="Middle temperature (K)."
+    )
+    args.add_argument(
+        "-A", "--area", type=float, required=True, help="Cross-sectional area (m^2)."
+    )
     # SOLVE ================================
     pargs = parser.parse_args()
-    if (pargs.subparser == 'inputfile'):
+    if pargs.subparser == "inputfile":
         mdot, Cp, Tin, Tout, Twall, Tmid, area = readInputfile(pargs.filename)
-    elif (pargs.subparser == 'args'):
-        mdot  = pargs.mdot
-        Cp    = pargs.Cp
-        Tin   = pargs.Tin
-        Tout  = pargs.Tout
+    elif pargs.subparser == "args":
+        mdot = pargs.mdot
+        Cp = pargs.Cp
+        Tin = pargs.Tin
+        Tout = pargs.Tout
         Twall = pargs.Twall
-        Tmid  = pargs.Tmid
-        area  = pargs.area
+        Tmid = pargs.Tmid
+        area = pargs.area
     h = solve(mdot, Cp, Tin, Tout, Twall, Tmid, area)
     # POST PROCESSING ======================
     print(h)
