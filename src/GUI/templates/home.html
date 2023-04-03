@@ -1,15 +1,20 @@
 <h1>Flask GUI Demo</h1>
 <p>Please provide inputs. </p>
 <form id = "myForm" action="/solve" method="POST">
-    MDot: <input type="number" name = "mdot" required/> Cp: <input type="number" name = "Cp" placeholder="$USD" required/></br>
+    Width: <input type="number" name = "w" required/> meters </br>
     <br>
-    Tin: <input type="number" name = "Tin" required/> Tou: <input type="number" name = "Tout" placeholder="$USD" required/></br>
+    Height: <input type="number" name = "h" required/> meters </br>
     <br>
-    T<sub>wall</sub>: <input type="number" name = "Twall" required/> Tmid: <input type="number" name = "Tmid" placeholder="$USD" required/></br>
+    Length: <input type="number" name = "l" required/> meters </br>
     <br>
-    area: <input type="text" name = "area" required/>
-    liquid: <select name="liquid" id="liquid">
-        <option value="water">Water</option>
+    Inlet Temperature: <input type="number" name = "T_in" required/> Kelvin </br>
+    <br>
+    Vol. Flow Rate: <input type="number" name = "Vdot" required/> m<sup>3</sup>/s </br>
+    <br>
+    Chip Heat: <input type="number" name = "q_chip" required/> ? </br>
+    <br>
+    Fluid: <select name="fluid" id="fluid">
+        <option value="air">Air</option>
         <option value="liq2">Liquid 2</option>
         <option value="liq3">Liquid 3</option>
         <option value="liq4">Liquid 4</option>
@@ -28,9 +33,8 @@
 <br>
 
 
-{% if plot_url %}
-    <p>h: {{result["h"]}} </p>
-    <img src= {{plot_url}} alt = "Chart cannot be displayed">
+{% if result %}
+    <p>Twall: {{result["T_wall"]}} </p>
 {% endif %}
 
 
