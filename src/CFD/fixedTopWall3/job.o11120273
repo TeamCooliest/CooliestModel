@@ -1,6 +1,6 @@
 /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3
-Fri Mar 31 13:23:55 CDT 2023
+Mon Apr  3 09:11:56 CDT 2023
 Running blockMesh on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3
 Running checkMesh on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3
 Running rhoPimpleFoam on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3
-Fri Mar 31 13:56:28 CDT 2023
+Mon Apr  3 09:38:36 CDT 2023
