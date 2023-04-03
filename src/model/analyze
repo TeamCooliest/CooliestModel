@@ -1,31 +1,44 @@
 #!/usr/bin/env python3
 # TODO make everything work with error checking (filenames, divide by zero, bla bla bla)
 # TODO wtf are the units for q_chip
+# TODO pathlib library for improving path in dataframe
+# TODO move getProperties() into the temperature search function (which hasn't been created)
 
 import argparse
 import pandas as pd
 import numpy as np
 
-def solve(w, h, l, T_in, V_dot, q_chip, fluid_name):
+def solve(w, h, l, T_in, V_dot, q_chip, fluid_name, cmdline=False):
+    if (cmdline):
+        print("Solving...\n")
     # calculate hydraulic diameter
     A = getArea(w, h, l)
     P = getPerimeter(w, h, l)
     D = 4 * A / P
     # estimate middle and outlet temperature
+    df = pd.read_excel(f"../../data/model/{fluid_name}_table.xlsx")
+    PRINT_COUNTER = 0
     tol     = 0.01
     T_mid   = 0
     T_guess = T_in
     dT      = 0.01
     while (np.abs(T_guess - T_mid) > tol):
+        PRINT_COUNTER += 1
         T_guess += dT
-        Cp, k, Pr, nu, rho = getProperties(fluid_name, T_guess)
+        Cp  = np.interp(T_guess, df["temp_k"], df["cp"])
+        rho = np.interp(T_guess, df["temp_k"], df["rho"])
         T_out = q_chip / (rho * V_dot * Cp) + T_in
         T_mid = (T_in + T_out) / 2
+        if (cmdline and (PRINT_COUNTER % 1000 == 0)):
+            print(f"---------------------------------------------------------\nIter: {PRINT_COUNTER}, T_guess: {T_guess:0.2f}, Err: {np.abs(T_guess - T_mid):0.2f}\n---------------------------------------------------------\n")
     # calculate Reynold's number
+    nu = np.interp(T_mid, df["temp_k"], df["nu_k"])
     Re = (V_dot * D) / (A * nu)
     # estimate Nusselt number
+    Pr = np.interp(T_mid, df["temp_k"], df["pr"])
     Nu = getNusselt(Re, Pr)
     # calculate heat coefficient
+    k = np.interp(T_mid, df["temp_k"], df["k"])
     h_coeff = Nu * k / D
     # calculate wall temperature
     T_wall = q_chip / (h_coeff * w * l) + T_mid
@@ -38,26 +51,6 @@ def getArea(w, h, l):
 def getPerimeter(w, h, l):
     # NOTE assumes rectangular and constant across length
     return 2 * (w + h)
-
-def getProperties(fluid_name, temp):
-    # NOTE only supports air
-    input_path = f"../../data/model/{fluid_name}_table.xlsx"
-    df = pd.read_excel(input_path)
-    if (temp in df["temp_k"].values):
-        # do everything normally pull values from table
-        Cp = df.loc[df["temp_k"] == temp, "cp"].values[0]
-        k = df.loc[df["temp_k"] == temp, "k"].values[0]
-        Pr = df.loc[df["temp_k"] == temp, "pr"].values[0]
-        nu = df.loc[df["temp_k"] == temp, "nu_k"].values[0]
-        rho = df.loc[df["temp_k"] == temp, "rho"].values[0]
-    else:
-        # interpolate
-        Cp = np.interp(temp, df["temp_k"], df["cp"])
-        k = np.interp(temp, df["temp_k"], df["k"])
-        Pr = np.interp(temp, df["temp_k"], df["pr"])
-        nu = np.interp(temp, df["temp_k"], df["nu_k"])
-        rho = np.interp(temp, df["temp_k"], df["rho"])
-    return Cp, k, Pr, nu, rho
 
 def getNusselt(Re, Pr):
     # NOTE assumes turbulence begins at inlet
@@ -127,6 +120,6 @@ if __name__ == "__main__":
         V_dot      = pargs.Vdot
         q_chip     = pargs.qChip
         fluid_name = pargs.fluid
-    T_wall = solve(w, h, l, T_in, V_dot, q_chip, fluid_name)
+    T_wall = solve(w, h, l, T_in, V_dot, q_chip, fluid_name, cmdline=True)
     # POST PROCESSING ======================
-    print(T_wall)
+    print(f"Temperature of the Wall = {T_wall:.02f}K or {T_wall - 273.15:.02f}C")
