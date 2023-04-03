@@ -1,0 +1,39 @@
+<h1>Flask GUI Demo</h1>
+<p>Please provide inputs. </p>
+<form id = "myForm" action="/solve" method="POST">
+    MDot: <input type="number" name = "mdot" required/> Cp: <input type="number" name = "Cp" placeholder="$USD" required/></br>
+    <br>
+    Tin: <input type="number" name = "Tin" required/> Tou: <input type="number" name = "Tout" placeholder="$USD" required/></br>
+    <br>
+    T<sub>wall</sub>: <input type="number" name = "Twall" required/> Tmid: <input type="number" name = "Tmid" placeholder="$USD" required/></br>
+    <br>
+    area: <input type="text" name = "area" required/>
+    liquid: <select name="liquid" id="liquid">
+        <option value="water">Water</option>
+        <option value="liq2">Liquid 2</option>
+        <option value="liq3">Liquid 3</option>
+        <option value="liq4">Liquid 4</option>
+      </select>
+    <br>
+    <input type="submit" value = OK />
+    <input type="button" onclick="reset()" value="Reset">
+    <br>
+</form>
+
+<script>
+    function reset() {
+      document.getElementById("myForm").reset();
+    }
+    </script>
+<br>
+
+
+{% if plot_url %}
+    <p>h: {{result["h"]}} </p>
+    <img src= {{plot_url}} alt = "Chart cannot be displayed">
+{% endif %}
+
+
+
+
+
