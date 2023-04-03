@@ -30,4 +30,14 @@ rhoPimpleFoam, adapted from #5 to modify
 
 rhoPimpleFoam, moved from externalHeatFlux... to fixedGradient (boundary condition)
 
+# 8. heatedplate4
+
+more defined blockmesh and run for 1 second (opposed to .3 s)
+
+# 9 FixedTopWall3
+
+blockmesh is now 6by1 instead of 1by1. This to find where the flow fully develops
+
+
+
 
