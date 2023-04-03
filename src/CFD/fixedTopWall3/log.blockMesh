@@ -1,0 +1,77 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-49b2b3b8b082
+Exec   : blockMesh
+Date   : Mar 31 2023
+Time   : 13:24:04
+Host   : "c405-021.stampede2.tacc.utexas.edu"
+PID    : 246812
+I/O    : uncollated
+Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Deleting polyMesh directory
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3/constant/polyMesh"
+Creating block mesh from
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/fixedTopWall3/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating points with scale 0.01
+    Block 0 cell size :
+        i : 0.0005 .. 0.0005
+        j : 0.0005 .. 0.0005
+        k : 0.002
+Creating cells
+Creating patches
+
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 -0.001) (0.06 0.01 0.001)
+  nPoints: 5082
+  nCells: 2400
+  nFaces: 9740
+  nInternalFaces: 4660
+----------------
+Patches
+----------------
+  patch 0 (start: 4660 size: 120) name: upperWall
+  patch 1 (start: 4780 size: 120) name: lowerWall
+  patch 2 (start: 4900 size: 20) name: inlet
+  patch 3 (start: 4920 size: 20) name: outlet
+  patch 4 (start: 4940 size: 4800) name: frontAndBack
+
+End
+
