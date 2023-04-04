@@ -5,52 +5,71 @@
 # TODO move getProperties() into the temperature search function (which hasn't been created)
 
 import argparse
-import pandas as pd
+import logging
+from pathlib import Path
+
 import numpy as np
+import pandas as pd
 
 
-def solve(w, h, l, T_in, V_dot, q_chip, fluid_name, cmdline=True):
-    if cmdline:
-        print("Solving...\n")
+def solve(w, h, l, T_in, V_dot, q_chip, fluid_name):
+    logging.info("Solving...")
     # calculate hydraulic diameter
     A = getArea(w, h, l)
     P = getPerimeter(w, h, l)
     D = 4 * A / P
+
     # estimate middle and outlet temperature
-    df = pd.read_excel(f"../../data/model/{fluid_name}_table.xlsx")
+    fluid_table = get_fluid_table(fluid_name)
+
     PRINT_COUNTER = 0
     tol = 0.01
     T_mid = 0
     T_guess = T_in
     dT = 0.01
+
     while np.abs(T_guess - T_mid) > tol:
         PRINT_COUNTER += 1
         T_guess += dT
-        Cp = np.interp(T_guess, df["temp_k"], df["cp"])
-        rho = np.interp(T_guess, df["temp_k"], df["rho"])
+        Cp = np.interp(T_guess, fluid_table["temp_k"], fluid_table["cp"])
+        rho = np.interp(T_guess, fluid_table["temp_k"], fluid_table["rho"])
         T_out = q_chip / (rho * V_dot * Cp) + T_in
         T_mid = (T_in + T_out) / 2
-        if cmdline and (PRINT_COUNTER % 1000 == 0):
-            print(
-                f"---------------------------------------------------------\nIter: {PRINT_COUNTER}, T_guess: {T_guess:0.2f}, Err: {np.abs(T_guess - T_mid):0.2f}\n---------------------------------------------------------\n"
+        if PRINT_COUNTER % 1000 == 0:
+            logging.debug(
+                f"""---------------------------------------------------------\n
+                Iter: {PRINT_COUNTER}, T_guess: {T_guess:0.2f}, Err: {np.abs(T_guess - T_mid):0.2f}\n
+                ---------------------------------------------------------\n"""
             )
+
     # calculate Reynold's number
-    nu = np.interp(T_mid, df["temp_k"], df["nu_k"])
+    nu = np.interp(T_mid, fluid_table["temp_k"], fluid_table["nu_k"])
     Re = (V_dot * D) / (A * nu)
+
     # estimate Nusselt number
-    Pr = np.interp(T_mid, df["temp_k"], df["pr"])
+    Pr = np.interp(T_mid, fluid_table["temp_k"], fluid_table["pr"])
     Nu = getNusselt(Re, Pr)
+
     # calculate heat coefficient
-    k = np.interp(T_mid, df["temp_k"], df["k"])
+    k = np.interp(T_mid, fluid_table["temp_k"], fluid_table["k"])
     h_coeff = Nu * k / D
+
     # calculate wall temperature
     T_wall = q_chip / (h_coeff * w * l) + T_mid
+
     return T_wall
 
 
 def getArea(w, h, l):
     # NOTE assumes rectangular and constant across length
     return w * h
+
+
+def get_fluid_table(fluid_name):
+    current_path = Path(__file__).parent
+    fluid_table_path = current_path / f"../../data/model/{fluid_name}_table.xlsx"
+    fluid_table = pd.read_excel(fluid_table_path)
+    return fluid_table
 
 
 def getPerimeter(w, h, l):
@@ -81,17 +100,22 @@ def readInputfile(filename):
     return w, h, l, T_in, V_dot, q_chip, fluid_name
 
 
-if __name__ == "__main__":
+def main():
     # ARG PARSING ==========================
     parser = argparse.ArgumentParser(
         description="Team Cooliest's ~ proprietary ~ model."
     )
+
+    parser.add_argument("-d", "--debug", action="store_true", help="Enable debug mode.")
+
     subparser = parser.add_subparsers(dest="subparser")
+
     # Input File ---------------------------
     inputfile = subparser.add_parser("inputfile")
     inputfile.add_argument(
         "-f", "--filename", type=str, required=True, help="Name of the input file."
     )
+
     # Arguments ----------------------------
     # help strings include SI units
     args = subparser.add_parser("args")
@@ -117,6 +141,7 @@ if __name__ == "__main__":
         required=True,
         help="The fluid flowing through the channel (-).",
     )
+
     # SOLVE ================================
     pargs = parser.parse_args()
     if pargs.subparser == "inputfile":
@@ -129,6 +154,16 @@ if __name__ == "__main__":
         V_dot = pargs.Vdot
         q_chip = pargs.qChip
         fluid_name = pargs.fluid
-    T_wall = solve(w, h, l, T_in, V_dot, q_chip, fluid_name, cmdline=True)
+
+    if pargs.debug:
+        logging.basicConfig(level=logging.DEBUG)
+    else:
+        logging.basicConfig(level=logging.INFO)
+    T_wall = solve(w, h, l, T_in, V_dot, q_chip, fluid_name)
+
     # POST PROCESSING ======================
-    print(f"Temperature of the Wall = {T_wall:.02f}K or {T_wall - 273.15:.02f}C")
+    logging.info(f"Temperature of the Wall = {T_wall:.02f}K or {T_wall - 273.15:.02f}C")
+
+
+if __name__ == "__main__":
+    main()
