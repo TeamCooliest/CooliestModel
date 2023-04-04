@@ -58,6 +58,8 @@ same as 5.2  but  using heatflux q = 890/(0.450 * 0.090) =~ 22000.
 
 Simulation shows this is the same as Q = 890. Thus I know what im doing kinda :)
 
+![](heatedplate5.3/plotsAndVideos/PowerVsFlux5.3.png)
+
 ### Paraview
 
 #### How to view wall temp and other boundary values
