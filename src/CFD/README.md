@@ -52,6 +52,12 @@ using fixedGradient = 4400. determined with math. see this [link](https://www.cf
 
 same as 5.1 but using externalWallHeatFluxTemperature. with Q = 890 W 
 
+#### 13. heatedplate5.3
+
+same as 5.2  but  using heatflux q = 890/(0.450 * 0.090) =~ 22000. 
+
+Simulation shows this is the same as Q = 890. Thus I know what im doing kinda :)
+
 ### Paraview
 
 #### How to view wall temp and other boundary values
