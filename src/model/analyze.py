@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 # TODO make everything work with error checking (filenames, divide by zero, bla bla bla)
-# TODO wtf are the units for q_chip
-# TODO pathlib library for improving path in dataframe
 # TODO move getProperties() into the temperature search function (which hasn't been created)
 
 import argparse
@@ -142,7 +140,6 @@ def main():
         help="The fluid flowing through the channel (-).",
     )
 
-    # SOLVE ================================
     pargs = parser.parse_args()
     if pargs.subparser == "inputfile":
         w, h, l, T_in, V_dot, q_chip, fluid_name = readInputfile(pargs.filename)
@@ -159,6 +156,8 @@ def main():
         logging.basicConfig(level=logging.DEBUG)
     else:
         logging.basicConfig(level=logging.INFO)
+
+    # SOLVE ================================
     T_wall = solve(w, h, l, T_in, V_dot, q_chip, fluid_name)
 
     # POST PROCESSING ======================
