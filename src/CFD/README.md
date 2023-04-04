@@ -40,6 +40,17 @@ more defined blockmesh and run for 1 second (opposed to .3 s)
 
 blockmesh is now 6by1 instead of 1by1. This to find where the flow fully develops
 
+#### 10. heatedplate5
+
+realistic server size. not complete.
+
+#### 11. heatedplate5.1
+
+using fixedGradient = 4400. determined with math. see this [link](https://www.cfd-online.com/Forums/openfoam-pre-processing/175229-fixedgradient-boundary-condition.html) for example of derivaiton. we assume W = 890, k = 12 (est/guess).
+
+#### 12. heatedplate5.2
+
+same as 5.1 but using externalWallHeatFluxTemperature. with Q = 890 W 
 ### Paraview
 
 #### How to view wall temp and other boundary values
