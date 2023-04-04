@@ -20,8 +20,8 @@ thermoType
     type            hePsiThermo;
     mixture         pureMixture;
     transport       const;
-    thermo          eConst;
-    equationOfState perfectGas;
+    thermo          eConst; // eConst (for constant specific heat)
+    equationOfState perfectGas; // perfectGas (for gas) or icoPolynomial (for liquid) (i think)
     specie          specie;
     energy          sensibleInternalEnergy;
 }
@@ -30,11 +30,11 @@ mixture
 {
     specie
     {
-        molWeight   28.9;
+        molWeight   28.9; 
     }
     thermodynamics
     {
-        Cv          712;
+        Cv          712; // specific heat
         Hf          0;
     }
     transport
