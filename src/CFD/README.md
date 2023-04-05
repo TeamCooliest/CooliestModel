@@ -66,7 +66,7 @@ Same as 5.3 using heat flux, q = 890 W/m^2 instead of power Q = 890 W
 
 This makes way more sense because now we get max temp of 301 K which is safe for any server
 
-![photo](heatedplate5.3.q890/PlotsAndVideos/BottomWallTempByTime.png)
+![photo](heatedplate5.3-q890/PlotsAndVideos/BottomWallTempByTime.png)
 
 ### Paraview
 
