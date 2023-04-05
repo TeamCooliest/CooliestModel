@@ -60,6 +60,14 @@ Simulation shows this is the same as Q = 890. Thus I know what im doing kinda :)
 
 ![photo](heatedplate5.3/plotsAndVideos/PowerVsFlux.5.3.png)
 
+#### 14. heatedplate5.3.q890
+
+Same as 5.3 using heat flux, q = 890 W/m^2 instead of power Q = 890 W
+
+This makes way more sense because now we get max temp of 301 K which is safe for any server
+
+![photo](heatedplate5.3.q890/PlotsAndVideos/BottomWallTempByTime.png)
+
 ### Paraview
 
 #### How to view wall temp and other boundary values
