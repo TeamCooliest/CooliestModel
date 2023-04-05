@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-49b2b3b8b082
+Exec   : blockMesh
+Date   : Apr 04 2023
+Time   : 12:12:10
+Host   : "c404-024.stampede2.tacc.utexas.edu"
+PID    : 85359
+I/O    : uncollated
+Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+
+--> FOAM FATAL ERROR: 
+Trying to specify a boundary face 4(0 4 7 3) on the face on cell 0 which is either an internal face or already belongs to some other patch.  This is face 0 of patch 3 named inlet.
+
+    From function void Foam::polyMesh::setTopology(const Foam::List<Foam::cellShape> &, const Foam::List<Foam::List<Foam::face>> &, const Foam::List<Foam::word> &, Foam::List<int> &, Foam::List<int> &, int &, int &, Foam::List<Foam::cell> &)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 324.
+
+FOAM aborting
+
+#0  Foam::error::printStack(Foam::Ostream&) at ??:?
+#1  Foam::error::abort() at ??:?
+#2  Foam::polyMesh::setTopology(Foam::List<Foam::cellShape> const&, Foam::List<Foam::List<Foam::face> > const&, Foam::List<Foam::word> const&, Foam::List<int>&, Foam::List<int>&, int&, int&, Foam::List<Foam::cell>&) at ??:?
+#3  Foam::polyMesh::polyMesh(Foam::IOobject const&, Foam::Field<Foam::Vector<double> >&&, Foam::List<Foam::cellShape> const&, Foam::List<Foam::List<Foam::face> > const&, Foam::List<Foam::word> const&, Foam::PtrList<Foam::dictionary> const&, Foam::word const&, Foam::word const&, bool) at ??:?
+#4  Foam::blockMesh::createTopology(Foam::IOdictionary const&, Foam::word const&) at ??:?
+#5  Foam::blockMesh::blockMesh(Foam::IOdictionary const&, Foam::word const&) at ??:?
+#6  ? at ??:?
+#7  __libc_start_main in "/lib64/libc.so.6"
+#8  ? at ??:?
