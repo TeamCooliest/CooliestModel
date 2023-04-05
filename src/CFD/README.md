@@ -68,6 +68,18 @@ This makes way more sense because now we get max temp of 301 K which is safe for
 
 ![photo](heatedplate5.3-q890/PlotsAndVideos/BottomWallTempByTime.png)
 
+#### 15. heatedplate6.1
+
+New blockmesh to model heat only applying ot half of the bottom plate (latter half).
+
+#### 16 heatedplate6.2
+
+Updated blockmesh so that heat only applies to middle area. middle 50 mm of total 450 mm length.
+
+uses Power of Q = 50 W
+
+![photo](heatedplate6.2/PlotsAndVideos/Temp.gif)
+
 ### Paraview
 
 #### How to view wall temp and other boundary values
