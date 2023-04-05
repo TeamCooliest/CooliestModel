@@ -36,7 +36,7 @@ vertices
 blocks
 (
     hex (0 1 2 3 4 5 6 7) (60 12 1) simpleGrading (1 1 1)
-    hex (0 8 9 3 4 10 11 7) (60 12 1) simpleGrading (1 1 1)
+    hex (1 8 9 2 5 10 11 6) (60 12 1) simpleGrading (1 1 1)
 );
 
 edges
@@ -51,7 +51,7 @@ boundary
         faces
         (
             (3 7 6 2)
-            (3 7 11 9) 
+            (2 6 11 9) 
         );
     }
     lowerWall
@@ -67,7 +67,7 @@ boundary
         type wall;
         faces
         (
-            (8 10 4 0)
+            (8 10 5 1)
         );
     }
     inlet
@@ -93,8 +93,8 @@ boundary
         (
             (0 3 2 1)
             (4 5 6 7)
-            (0 3 9 8)
-            (4 10 11 7)
+            (1 2 9 8)
+            (5 10 11 6)
         );
     }
 );

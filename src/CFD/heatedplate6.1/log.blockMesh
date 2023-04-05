@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
-Date   : Apr 04 2023
-Time   : 12:12:10
-Host   : "c404-024.stampede2.tacc.utexas.edu"
-PID    : 85359
+Date   : Apr 05 2023
+Time   : 13:28:25
+Host   : "c428-014.stampede2.tacc.utexas.edu"
+PID    : 5179
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1
 nProcs : 1
@@ -30,21 +30,51 @@ Creating topology patches
 
 Creating block mesh topology
 
+Check topology
 
---> FOAM FATAL ERROR: 
-Trying to specify a boundary face 4(0 4 7 3) on the face on cell 0 which is either an internal face or already belongs to some other patch.  This is face 0 of patch 3 named inlet.
+	Basic statistics
+		Number of internal faces : 1
+		Number of boundary faces : 10
+		Number of defined boundary faces : 10
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
 
-    From function void Foam::polyMesh::setTopology(const Foam::List<Foam::cellShape> &, const Foam::List<Foam::List<Foam::face>> &, const Foam::List<Foam::word> &, Foam::List<int> &, Foam::List<int> &, int &, int &, Foam::List<Foam::cell> &)
-    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 324.
+Creating block offsets
+Creating merge list .
 
-FOAM aborting
+Creating polyMesh from blockMesh
+Creating points with scale 0.001
+    Block 0 cell size :
+        i : 0.00375
+        j : 0.00375
+        k : 0.09
+    Block 1 cell size :
+        i : 0.00375
+        j : 0.00375
+        k : 0.09
+Creating cells
+Creating patches
 
-#0  Foam::error::printStack(Foam::Ostream&) at ??:?
-#1  Foam::error::abort() at ??:?
-#2  Foam::polyMesh::setTopology(Foam::List<Foam::cellShape> const&, Foam::List<Foam::List<Foam::face> > const&, Foam::List<Foam::word> const&, Foam::List<int>&, Foam::List<int>&, int&, int&, Foam::List<Foam::cell>&) at ??:?
-#3  Foam::polyMesh::polyMesh(Foam::IOobject const&, Foam::Field<Foam::Vector<double> >&&, Foam::List<Foam::cellShape> const&, Foam::List<Foam::List<Foam::face> > const&, Foam::List<Foam::word> const&, Foam::PtrList<Foam::dictionary> const&, Foam::word const&, Foam::word const&, bool) at ??:?
-#4  Foam::blockMesh::createTopology(Foam::IOdictionary const&, Foam::word const&) at ??:?
-#5  Foam::blockMesh::blockMesh(Foam::IOdictionary const&, Foam::word const&) at ??:?
-#6  ? at ??:?
-#7  __libc_start_main in "/lib64/libc.so.6"
-#8  ? at ??:?
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 -0.09) (0.45 0.045 0)
+  nPoints: 3146
+  nCells: 1440
+  nFaces: 5892
+  nInternalFaces: 2748
+----------------
+Patches
+----------------
+  patch 0 (start: 2748 size: 120) name: upperWall
+  patch 1 (start: 2868 size: 60) name: lowerWall
+  patch 2 (start: 2928 size: 60) name: heatedWall
+  patch 3 (start: 2988 size: 12) name: inlet
+  patch 4 (start: 3000 size: 12) name: outlet
+  patch 5 (start: 3012 size: 2880) name: frontAndBack
+
+End
+
