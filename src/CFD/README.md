@@ -78,7 +78,7 @@ Updated blockmesh so that heat only applies to middle area. middle 50 mm of tota
 
 uses Power of Q = 50 W
 
-![photo](heatedplate6.2/PlotsAndVideos/Temp.gif)
+![gif](heatedplate6.2/PlotsAndVideos/Temp.gif)
 
 ### Paraview
 
