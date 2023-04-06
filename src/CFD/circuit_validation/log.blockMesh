@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Apr 06 2023
-Time   : 13:57:33
-Host   : "c401-013.stampede2.tacc.utexas.edu"
-PID    : 177368
+Time   : 14:23:55
+Host   : "c408-094.stampede2.tacc.utexas.edu"
+PID    : 131239
 I/O    : uncollated
 Case   : /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
 nProcs : 1
@@ -43,11 +43,11 @@ Creating block offsets
 Creating merge list .
 
 Creating polyMesh from blockMesh
-Creating points with scale 0.001
+Creating points with scale 1
     Block 0 cell size :
-        i : 0.00125
-        j : 0.00208333 .. 0.00208333
-        k : 0.006
+        i : 0.15 .. 0.15
+        j : 0.0166667 .. 0.0166667
+        k : 0.15
 Creating cells
 Creating patches
 
@@ -57,7 +57,7 @@ Writing polyMesh
 ----------------
 Mesh Information
 ----------------
-  boundingBox: (0 0 -0.006) (0.15 0.025 0)
+  boundingBox: (0 0 -0.15) (18 0.2 0)
   nPoints: 3146
   nCells: 1440
   nFaces: 5892

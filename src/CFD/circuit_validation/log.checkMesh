@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Apr 06 2023
-Time   : 13:57:36
-Host   : "c401-013.stampede2.tacc.utexas.edu"
-PID    : 177378
+Time   : 14:23:58
+Host   : "c408-094.stampede2.tacc.utexas.edu"
+PID    : 131247
 I/O    : uncollated
 Case   : /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
 nProcs : 1
@@ -63,19 +63,19 @@ Checking patch topology for multiply connected surfaces...
     frontAndBack        2880     3146     ok (non-closed singly connected)  
 
 Checking geometry...
-    Overall domain bounding box (0 0 -0.006) (0.15 0.025 0)
+    Overall domain bounding box (0 0 -0.15) (18 0.2 0)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (1.05879e-18 -3.82047e-17 -7.54389e-18) OK.
-    Max cell openness = 8.13152e-17 OK.
-    Max aspect ratio = 1.66667 OK.
-    Minimum face area = 2.60417e-06. Maximum face area = 1.25e-05.  Face area magnitudes OK.
-    Min volume = 1.5625e-08. Max volume = 1.5625e-08.  Total volume = 2.25e-05.  Cell volumes OK.
+    Boundary openness (4.11072e-19 1.1647e-16 3.92985e-16) OK.
+    Max cell openness = 1.73472e-16 OK.
+    Max aspect ratio = 9 OK.
+    Minimum face area = 0.0025. Maximum face area = 0.0225.  Face area magnitudes OK.
+    Min volume = 0.000375. Max volume = 0.000375.  Total volume = 0.54.  Cell volumes OK.
     Mesh non-orthogonality Max: 0 average: 0
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 8.56128e-14 OK.
+    Max skewness = 9.4739e-14 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.
