@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Apr 06 2023
-Time   : 14:23:58
-Host   : "c408-094.stampede2.tacc.utexas.edu"
-PID    : 131247
+Time   : 14:40:45
+Host   : "c424-023.stampede2.tacc.utexas.edu"
+PID    : 238519
 I/O    : uncollated
 Case   : /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
 nProcs : 1
