@@ -1,0 +1,6 @@
+/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/hp5.3-v0.06
+Fri Apr  7 14:36:36 CDT 2023
+Running blockMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/hp5.3-v0.06
+Running checkMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/hp5.3-v0.06
+Running rhoPimpleFoam on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/hp5.3-v0.06
+Fri Apr  7 14:40:58 CDT 2023

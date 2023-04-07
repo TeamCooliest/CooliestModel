@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Apr 07 2023
-Time   : 14:21:32
-Host   : "c420-012.stampede2.tacc.utexas.edu"
-PID    : 36373
+Time   : 14:35:57
+Host   : "c407-014.stampede2.tacc.utexas.edu"
+PID    : 149874
 I/O    : uncollated
 Case   : /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/hp5.3-v0.04
 nProcs : 1
