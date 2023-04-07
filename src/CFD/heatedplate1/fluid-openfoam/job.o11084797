@@ -1,0 +1,6 @@
+/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate1/fluid-openfoam
+Fri Mar 24 16:05:15 CDT 2023
+Running blockMesh on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate1/fluid-openfoam
+Running checkMesh on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate1/fluid-openfoam
+Running buoyantPimpleFoam on /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate1/fluid-openfoam
+Fri Mar 24 16:06:10 CDT 2023

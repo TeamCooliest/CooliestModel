@@ -1,0 +1,6 @@
+/home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
+Thu Apr  6 13:51:26 CDT 2023
+Running blockMesh on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
+Running checkMesh on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
+Running rhoPimpleFoam on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/circuit_validation
+Thu Apr  6 13:51:50 CDT 2023

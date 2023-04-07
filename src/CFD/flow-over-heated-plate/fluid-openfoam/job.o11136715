@@ -1,0 +1,6 @@
+/home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/fluid-openfoam
+Fri Apr  7 12:08:40 CDT 2023
+Running blockMesh on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/fluid-openfoam
+Running checkMesh on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/fluid-openfoam
+Running buoyantPimpleFoam on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/fluid-openfoam
+Fri Apr  7 12:09:37 CDT 2023
