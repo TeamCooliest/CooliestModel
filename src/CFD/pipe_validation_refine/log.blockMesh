@@ -8,11 +8,11 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Apr 06 2023
-Time   : 17:05:03
-Host   : "c405-063.stampede2.tacc.utexas.edu"
-PID    : 216934
+Time   : 22:34:57
+Host   : "c415-102.stampede2.tacc.utexas.edu"
+PID    : 246390
 I/O    : uncollated
-Case   : /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine
+Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/pipe_validation_refine
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -21,8 +21,10 @@ allowSystemOperations : Allowing user-supplied system call operations
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+Deleting polyMesh directory
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/pipe_validation_refine/constant/polyMesh"
 Creating block mesh from
-    "/home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine/system/blockMeshDict"
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/pipe_validation_refine/system/blockMeshDict"
 Creating block edges
 No non-planar block faces defined
 Creating topology blocks

@@ -1,6 +1,0 @@
-/home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine
-Thu Apr  6 17:04:55 CDT 2023
-Running blockMesh on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine
-Running checkMesh on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine
-Running rhoPimpleFoam on /home1/07645/eesha_n/SeniorDesign/CooliestModel/src/CFD/pipe_validation_refine
-Thu Apr  6 17:05:50 CDT 2023
