@@ -1,5 +1,14 @@
 # TeamCooliest
 
+## Installation
+
+Create a conda environment from the `env.yml` file and activate it. This may be faster with [mamba](https://mamba.readthedocs.io/en/latest/).
+
+```bash
+conda env create -f env.yml
+conda activate TeamCooliest
+```
+
 ## File Structure
 
 Subject to change.
