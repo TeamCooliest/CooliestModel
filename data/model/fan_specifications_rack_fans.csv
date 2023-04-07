@@ -1,5 +1,4 @@
-﻿Model Number,Fan Size,Airflow,Noise,Temp,Variable Speed,Fan Speed,Current Draw,Power Consumption,Power Supply,Power Supply
-,,(CFM),(dBA),Control,,(RPM),(A amps),(W watts),,Plug Type
+﻿Model Number,Fan Size,Airflow (CFM),Noise (dBA),Temp Control,Variable Speed,Fan Speed,Current Draw (A amps),Power Consumption (W Watts),Power Supply,Power Supply Plug Type
 HK640B,1U,31.2,20,,,4000,1.5,4.5,100-240 VAC,NEMA 1-15P
 ,19 x 1.75 x 1.5 in.,,,,,,,,12VDC - 2A,
 SL440B,1U,41.6,38,,,8000,1,3,100-240 VAC,NEMA 1-15P
