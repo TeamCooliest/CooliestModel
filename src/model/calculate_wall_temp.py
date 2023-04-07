@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 
-def calculate_wall_temperature(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
+def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
     """Calculates the temperature of the bottom wall in a rectangular duct,
     where the bottom wall is producing a constant heat flux.
 
@@ -27,6 +27,7 @@ def calculate_wall_temperature(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
         float: Temperature of heated surface (K)
     """
     logging.info("Solving...")
+    logging.debug(f"Input parameters: {locals()}")
     # calculate hydraulic diameter
     area = get_area(w, h, l)
     perimeter = get_perimeter(w, h, l)
@@ -67,6 +68,7 @@ def calculate_wall_temperature(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
     # calculate wall temperature
     T_wall = q_chip / (h_coeff * w * l) + t_mid
 
+    logging.debug(f"Wall temperature: {T_wall:0.2f} K")
     return T_wall
 
 
@@ -203,7 +205,7 @@ def main():
         logging.basicConfig(level=logging.INFO)
 
     # SOLVE ================================
-    T_wall = calculate_wall_temperature(w, h, l, T_in, V_dot, q_chip, fluid_name)
+    T_wall = calculate_wall_temp(w, h, l, T_in, V_dot, q_chip, fluid_name)
 
     # POST PROCESSING ======================
     logging.info(f"Temperature of the Wall = {T_wall:.02f}K or {T_wall - 273.15:.02f}C")
