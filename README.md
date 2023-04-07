@@ -9,6 +9,12 @@ conda env create -f env.yml
 conda activate TeamCooliest
 ```
 
+Install model as editable package:
+
+```bash
+pip install -e .
+```
+
 ## File Structure
 
 Subject to change.
