@@ -1,0 +1,6 @@
+/home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/solid-openfoam
+Fri Apr  7 12:08:56 CDT 2023
+Running blockMesh on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/solid-openfoam
+Running checkMesh on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/solid-openfoam
+Running laplacianFoam on /home1/08376/lew2547/old_stuff/tutorials/flow-over-heated-plate/solid-openfoam
+Fri Apr  7 12:09:16 CDT 2023
