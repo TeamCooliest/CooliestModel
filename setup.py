@@ -6,8 +6,8 @@ setup(
     packages=["src", "src.model", "src.GUI"],
     entry_points={
         "console_scripts": [
-            "model_solve = src.model.calculate_wall_temp:main",
-            "gui = src.GUI:main",
+            "tc-model = src.model.calculate_wall_temp:main",
+            "tc-gui = src.GUI.app:main",
         ]
     },
 )

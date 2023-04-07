@@ -15,6 +15,18 @@ Install model as editable package:
 pip install -e .
 ```
 
+Run model from command line:
+
+```bash
+tc-model -h
+```
+
+Run GUI from command line
+
+```bash
+tc-gui
+```
+
 ## File Structure
 
 Subject to change.
