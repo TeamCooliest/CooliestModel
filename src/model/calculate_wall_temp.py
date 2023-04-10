@@ -93,7 +93,6 @@ def get_properties(fluid_name, temp, pressure=101_325):
     NOTE: For `fluid_name="air"`, values may be different due to different definitions of
     an air mixture.
     """
-<<<<<<< HEAD
     if fluid_name == "air":
         fluid = ct.Solution(f"{fluid_name}.yaml")
         fluid.TP = temp, pressure
@@ -120,16 +119,6 @@ def get_properties(fluid_name, temp, pressure=101_325):
             pr = np.interp(temp, df["temp_k"], df["pr"])
             nu_k = np.interp(temp, df["temp_k"], df["nu_k"])
             rho = np.interp(temp, df["temp_k"], df["rho"])
-=======
-
-    fluid = ct.Solution(f"{fluid_name}.yaml")
-    fluid.TP = temp, pressure
-    cp = fluid.cp_mass
-    rho = fluid.density
-    k = fluid.thermal_conductivity
-    nu_k = fluid.viscosity / fluid.density
-    pr = (nu_k * cp) / k
->>>>>>> 31aefeeabc5ace6f5f209047ee860cbc2477fd56
 
     return cp, k, pr, nu_k, rho
 
@@ -242,11 +231,6 @@ def main():
 
     # POST PROCESSING ======================
     logging.info(f"Temperature of the Wall = {T_wall:.02f}K or {T_wall - 273.15:.02f}C")
-<<<<<<< HEAD
-    cp, k, pr, nu_k, rho = get_properties("air", 300)
-    logging.info(cp, k, pr, nu_k, rho)
-=======
->>>>>>> 31aefeeabc5ace6f5f209047ee860cbc2477fd56
 
 
 if __name__ == "__main__":
