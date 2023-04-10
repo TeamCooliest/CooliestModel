@@ -8,6 +8,7 @@ from pathlib import Path
 import cantera as ct
 import numpy as np
 import pandas as pd
+from nist_janaf import get_fluid_properties_janaf
 
 
 def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
@@ -117,22 +118,7 @@ def get_properties(fluid_name, temp, pressure=101_325):
         pr = (nu_k * cp) / k
 
     else:
-        input_path = f"../../data/{fluid_name}_table.xlsx"
-        df = pd.read_excel(input_path)
-        if temp in df["temp_k"].values:
-            # do everything normally pull values from table
-            cp = df.loc[df["temp_k"] == temp, "cp"].values[0]
-            k = df.loc[df["temp_k"] == temp, "k"].values[0]
-            pr = df.loc[df["temp_k"] == temp, "pr"].values[0]
-            nu_k = df.loc[df["temp_k"] == temp, "nu_k"].values[0]
-            rho = df.loc[df["temp_k"] == temp, "rho"].values[0]
-
-        else:
-            cp = np.interp(temp, df["temp_k"], df["cp"])
-            k = np.interp(temp, df["temp_k"], df["k"])
-            pr = np.interp(temp, df["temp_k"], df["pr"])
-            nu_k = np.interp(temp, df["temp_k"], df["nu_k"])
-            rho = np.interp(temp, df["temp_k"], df["rho"])
+        cp, k, pr, nu_k, rho = get_fluid_properties_janaf(fluid_name, temp, pressure)
 
     return cp, k, pr, nu_k, rho
 
