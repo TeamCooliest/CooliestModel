@@ -8,10 +8,10 @@
             "name": "Run Emperical Model",
             "type": "python",
             "request": "launch",
-            "program": "src/model/analyze.py",
+            "program": "src/model/calculate_wall_temp.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["-d","inputfile","-f","src/model/input/baseline.input",]
+            "args": ["-d","inputfile","-f","src/model/input/testcase2.input",]
         }
     ]
 }

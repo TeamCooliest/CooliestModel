@@ -6,6 +6,6 @@
  Length (m)             | .45085                    
  Inlet Temp (K)         | 291.15                   
  Vol. Flow Rate (m^3/s) | 0.15                     
- Chip Heat (W/m^2)      | 890                   
+ Chip Heat (W)          | 890                   
  Fluid (-)              | air                   
 ================================================
