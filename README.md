@@ -1,5 +1,32 @@
 # TeamCooliest
 
+## Installation
+
+Create a conda environment from the `env.yml` file and activate it. This may be faster with [mamba](https://mamba.readthedocs.io/en/latest/).
+
+```bash
+conda env create -f env.yml
+conda activate TeamCooliest
+```
+
+Install model as editable package:
+
+```bash
+pip install -e .
+```
+
+Run model from command line:
+
+```bash
+tc-model -h
+```
+
+Run GUI from command line
+
+```bash
+tc-gui
+```
+
 ## File Structure
 
 Subject to change.
