@@ -37,12 +37,11 @@ def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
     tol = 0.01
     t_mid = 0
     t_guess = t_in
-    err_old = 10**7
-    err_new = 10**6
+    err_old = 10 ** 7
+    err_new = 10 ** 6
 
     while err_new > tol:
         print_counter += 1
-
 
         if err_new >= err_old:
             dt = -0.01
@@ -62,7 +61,7 @@ def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
         t_mid = (t_in + t_out) / 2
 
         err_old = err_new
-        err_new = (t_guess - t_mid)**2
+        err_new = (t_guess - t_mid) ** 2
 
         if print_counter % 1000 == 0:
             logging.debug(
@@ -108,14 +107,32 @@ def get_properties(fluid_name, temp, pressure=101_325):
     NOTE: For `fluid_name="air"`, values may be different due to different definitions of
     an air mixture.
     """
+    if fluid_name == "air":
+        fluid = ct.Solution(f"{fluid_name}.yaml")
+        fluid.TP = temp, pressure
+        cp = fluid.cp_mass
+        rho = fluid.density
+        k = fluid.thermal_conductivity
+        nu_k = fluid.viscosity / fluid.density
+        pr = (nu_k * cp) / k
 
-    fluid = ct.Solution(f"{fluid_name}.yaml")
-    fluid.TP = temp, pressure
-    cp = fluid.cp_mass
-    rho = fluid.density
-    k = fluid.thermal_conductivity
-    nu_k = fluid.viscosity / fluid.density
-    pr = (nu_k * cp) / k
+    else:
+        input_path = f"../../data/{fluid_name}_table.xlsx"
+        df = pd.read_excel(input_path)
+        if temp in df["temp_k"].values:
+            # do everything normally pull values from table
+            cp = df.loc[df["temp_k"] == temp, "cp"].values[0]
+            k = df.loc[df["temp_k"] == temp, "k"].values[0]
+            pr = df.loc[df["temp_k"] == temp, "pr"].values[0]
+            nu_k = df.loc[df["temp_k"] == temp, "nu_k"].values[0]
+            rho = df.loc[df["temp_k"] == temp, "rho"].values[0]
+
+        else:
+            cp = np.interp(temp, df["temp_k"], df["cp"])
+            k = np.interp(temp, df["temp_k"], df["k"])
+            pr = np.interp(temp, df["temp_k"], df["pr"])
+            nu_k = np.interp(temp, df["temp_k"], df["nu_k"])
+            rho = np.interp(temp, df["temp_k"], df["rho"])
 
     return cp, k, pr, nu_k, rho
 
@@ -144,7 +161,7 @@ def get_nusselt(Re, Pr):
         return 4.364
     # turbulent
     else:
-        return 0.23 * Re**0.8 * Pr**0.4
+        return 0.23 * Re ** 0.8 * Pr ** 0.4
 
 
 def read_input_file(filename):
