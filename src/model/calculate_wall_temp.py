@@ -37,11 +37,23 @@ def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
     tol = 0.01
     t_mid = 0
     t_guess = t_in
-    dt = 0.01
+    err_old = 10**7
+    err_new = 10**6
 
-    while np.abs(t_guess - t_mid) > tol:
-        # TODO we need a better searching algorithm
+    while err_new > tol:
         print_counter += 1
+
+
+        if err_new >= err_old:
+            dt = -0.01
+        else:
+            if err_new <= 10:
+                dt = 0.01
+            elif err_new >= 1000:
+                dt = 1
+            else:
+                dt = err_new * 0.001
+
         t_guess += dt
 
         cp, k, prandtl, nu_k, rho = get_properties(fluid_name, t_guess)
@@ -49,10 +61,13 @@ def calculate_wall_temp(w, h, l, t_in, v_dot, q_chip, fluid_name="air"):
         t_out = q_chip / (rho * v_dot * cp) + t_in
         t_mid = (t_in + t_out) / 2
 
+        err_old = err_new
+        err_new = (t_guess - t_mid)**2
+
         if print_counter % 1000 == 0:
             logging.debug(
                 f"""---------------------------------------------------------\n
-                Iter: {print_counter}, T_guess: {t_guess:0.2f}, Err: {np.abs(t_guess - t_mid):0.2f}\n
+                Iter: {print_counter}, T_guess: {t_guess:0.2f}, Err: {err_new:0.2f}\n
                 ---------------------------------------------------------\n"""
             )
 
