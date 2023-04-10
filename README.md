@@ -9,6 +9,24 @@ conda env create -f env.yml
 conda activate TeamCooliest
 ```
 
+Install model as editable package:
+
+```bash
+pip install -e .
+```
+
+Run model from command line:
+
+```bash
+tc-model -h
+```
+
+Run GUI from command line
+
+```bash
+tc-gui
+```
+
 ## File Structure
 
 Subject to change.
