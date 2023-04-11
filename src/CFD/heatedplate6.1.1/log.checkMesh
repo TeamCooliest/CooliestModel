@@ -7,10 +7,10 @@
 \*---------------------------------------------------------------------------*/
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
-Date   : Apr 10 2023
-Time   : 13:03:37
-Host   : "c424-034.stampede2.tacc.utexas.edu"
-PID    : 275787
+Date   : Apr 11 2023
+Time   : 13:13:39
+Host   : "c416-011.stampede2.tacc.utexas.edu"
+PID    : 50705
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1
 nProcs : 1
@@ -26,10 +26,10 @@ Create polyMesh for time = 0
 Time = 0
 
 Mesh stats
-    points:           11011
-    faces:            28152
-    internal faces:   23688
-    cells:            8640
+    points:           16317
+    faces:            42580
+    internal faces:   36620
+    cells:            13200
     faces per cell:   6
     boundary patches: 6
     point zones:      0
@@ -37,7 +37,7 @@ Mesh stats
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     8640
+    hexahedra:     13200
     prisms:        0
     wedges:        0
     pyramids:      0
@@ -56,27 +56,27 @@ Checking topology...
 
 Checking patch topology for multiply connected surfaces...
     Patch               Faces    Points   Surface topology                  
-    upperWall           720      847      ok (non-closed singly connected)  
-    lowerWall           360      427      ok (non-closed singly connected)  
-    heatedWall          360      427      ok (non-closed singly connected)  
-    inlet               72       91       ok (non-closed singly connected)  
-    outlet              72       91       ok (non-closed singly connected)  
-    frontAndBack        2880     3146     ok (non-closed singly connected)  
+    upperWall           660      777      ok (non-closed singly connected)  
+    lowerWall           120      147      ok (non-closed singly connected)  
+    heatedWall          540      637      ok (non-closed singly connected)  
+    inlet               120      147      ok (non-closed singly connected)  
+    outlet              120      147      ok (non-closed singly connected)  
+    frontAndBack        4400     4662     ok (non-closed singly connected)  
 
 Checking geometry...
     Overall domain bounding box (0 0 -0.15) (19.2 0.2 0)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (1.06814e-18 -4.91319e-15 2.17676e-16) OK.
-    Max cell openness = 1.73472e-16 OK.
-    Max aspect ratio = 18 OK.
-    Minimum face area = 0.000333333. Maximum face area = 0.0075.  Face area magnitudes OK.
-    Min volume = 8.33333e-06. Max volume = 0.000125.  Total volume = 0.576.  Cell volumes OK.
+    Boundary openness (1.28498e-19 -7.33017e-16 3.78298e-16) OK.
+    Max cell openness = 1.807e-16 OK.
+    Max aspect ratio = 20 OK.
+    Minimum face area = 0.00025. Maximum face area = 0.005.  Face area magnitudes OK.
+    Min volume = 1.5e-05. Max volume = 5e-05.  Total volume = 0.576.  Cell volumes OK.
     Mesh non-orthogonality Max: 0 average: 0
     Non-orthogonality check OK.
     Face pyramids OK.
-    Max skewness = 7.10467e-14 OK.
+    Max skewness = 1.06569e-13 OK.
     Coupled point location match (average 0) OK.
 
 Mesh OK.
