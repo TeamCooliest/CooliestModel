@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Apr 11 2023
-Time   : 13:13:32
-Host   : "c416-011.stampede2.tacc.utexas.edu"
-PID    : 50687
+Time   : 19:00:45
+Host   : "c401-054.stampede2.tacc.utexas.edu"
+PID    : 38245
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1
 nProcs : 1
@@ -48,11 +48,11 @@ Creating polyMesh from blockMesh
 Creating points with scale 1
     Block 0 cell size :
         i : 0.06 .. 0.06
-        j : 0.01 .. 0.01
+        j : 0.0166667 .. 0.0166667
         k : 0.025
     Block 1 cell size :
         i : 0.2 .. 0.2
-        j : 0.01 .. 0.01
+        j : 0.0166667 .. 0.0166667
         k : 0.025
 Creating cells
 Creating patches
@@ -64,19 +64,19 @@ Writing polyMesh
 Mesh Information
 ----------------
   boundingBox: (0 0 -0.15) (19.2 0.2 0)
-  nPoints: 16317
-  nCells: 13200
-  nFaces: 42580
-  nInternalFaces: 36620
+  nPoints: 10101
+  nCells: 7920
+  nFaces: 25812
+  nInternalFaces: 21708
 ----------------
 Patches
 ----------------
-  patch 0 (start: 36620 size: 660) name: upperWall
-  patch 1 (start: 37280 size: 120) name: lowerWall
-  patch 2 (start: 37400 size: 540) name: heatedWall
-  patch 3 (start: 37940 size: 120) name: inlet
-  patch 4 (start: 38060 size: 120) name: outlet
-  patch 5 (start: 38180 size: 4400) name: frontAndBack
+  patch 0 (start: 21708 size: 660) name: upperWall
+  patch 1 (start: 22368 size: 120) name: lowerWall
+  patch 2 (start: 22488 size: 540) name: heatedWall
+  patch 3 (start: 23028 size: 72) name: inlet
+  patch 4 (start: 23100 size: 72) name: outlet
+  patch 5 (start: 23172 size: 2640) name: frontAndBack
 
 End
 

@@ -8,9 +8,9 @@
 Build  : 7-49b2b3b8b082
 Exec   : checkMesh
 Date   : Apr 11 2023
-Time   : 13:13:39
-Host   : "c416-011.stampede2.tacc.utexas.edu"
-PID    : 50705
+Time   : 19:00:48
+Host   : "c401-054.stampede2.tacc.utexas.edu"
+PID    : 38257
 I/O    : uncollated
 Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1
 nProcs : 1
@@ -26,10 +26,10 @@ Create polyMesh for time = 0
 Time = 0
 
 Mesh stats
-    points:           16317
-    faces:            42580
-    internal faces:   36620
-    cells:            13200
+    points:           10101
+    faces:            25812
+    internal faces:   21708
+    cells:            7920
     faces per cell:   6
     boundary patches: 6
     point zones:      0
@@ -37,7 +37,7 @@ Mesh stats
     cell zones:       0
 
 Overall number of cells of each type:
-    hexahedra:     13200
+    hexahedra:     7920
     prisms:        0
     wedges:        0
     pyramids:      0
@@ -59,20 +59,20 @@ Checking patch topology for multiply connected surfaces...
     upperWall           660      777      ok (non-closed singly connected)  
     lowerWall           120      147      ok (non-closed singly connected)  
     heatedWall          540      637      ok (non-closed singly connected)  
-    inlet               120      147      ok (non-closed singly connected)  
-    outlet              120      147      ok (non-closed singly connected)  
-    frontAndBack        4400     4662     ok (non-closed singly connected)  
+    inlet               72       91       ok (non-closed singly connected)  
+    outlet              72       91       ok (non-closed singly connected)  
+    frontAndBack        2640     2886     ok (non-closed singly connected)  
 
 Checking geometry...
     Overall domain bounding box (0 0 -0.15) (19.2 0.2 0)
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
     Mesh has 2 solution (non-empty) directions (1 1 0)
     All edges aligned with or perpendicular to non-empty directions.
-    Boundary openness (1.28498e-19 -7.33017e-16 3.78298e-16) OK.
-    Max cell openness = 1.807e-16 OK.
-    Max aspect ratio = 20 OK.
-    Minimum face area = 0.00025. Maximum face area = 0.005.  Face area magnitudes OK.
-    Min volume = 1.5e-05. Max volume = 5e-05.  Total volume = 0.576.  Cell volumes OK.
+    Boundary openness (1.06814e-18 -7.33017e-16 -1.75689e-16) OK.
+    Max cell openness = 1.0842e-16 OK.
+    Max aspect ratio = 12 OK.
+    Minimum face area = 0.000416667. Maximum face area = 0.005.  Face area magnitudes OK.
+    Min volume = 2.5e-05. Max volume = 8.33333e-05.  Total volume = 0.576.  Cell volumes OK.
     Mesh non-orthogonality Max: 0 average: 0
     Non-orthogonality check OK.
     Face pyramids OK.
