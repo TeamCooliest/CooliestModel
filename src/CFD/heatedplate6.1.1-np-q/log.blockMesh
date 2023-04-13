@@ -1,0 +1,82 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-49b2b3b8b082
+Exec   : blockMesh
+Date   : Apr 13 2023
+Time   : 09:09:46
+Host   : "c403-091.stampede2.tacc.utexas.edu"
+PID    : 76919
+I/O    : uncollated
+Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1-np-q
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Deleting polyMesh directory
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1-np-q/constant/polyMesh"
+Creating block mesh from
+    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.1.1-np-q/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 1
+		Number of boundary faces : 10
+		Number of defined boundary faces : 10
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.06 .. 0.06
+        j : 0.0222222 .. 0.0222222
+        k : 0.03 .. 0.03
+    Block 1 cell size :
+        i : 0.2 .. 0.2
+        j : 0.0222222 .. 0.0222222
+        k : 0.03 .. 0.03
+Creating cells
+Creating patches
+
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 -0.15) (19.2 0.2 0)
+  nPoints: 6660
+  nCells: 4950
+  nFaces: 16435
+  nInternalFaces: 13265
+----------------
+Patches
+----------------
+  patch 0 (start: 13265 size: 550) name: upperWall
+  patch 1 (start: 13815 size: 100) name: lowerWall
+  patch 2 (start: 13915 size: 450) name: heatedWall
+  patch 3 (start: 14365 size: 45) name: inlet
+  patch 4 (start: 14410 size: 45) name: outlet
+  patch 5 (start: 14455 size: 1980) name: frontAndBack
+
+End
+
