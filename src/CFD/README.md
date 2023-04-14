@@ -58,7 +58,7 @@ same as 5.2  but  using heatflux q = 890/(0.450 * 0.090) =~ 22000.
 
 Simulation shows this is the same as Q = 890. Thus I know what im doing kinda :)
 
-![photo](heatedplate5.3/plotsAndVideos/PowerVsFlux.5.3.png)
+<img src="heatedplate5.3/plotsAndVideos/PowerVsFlux.5.3.png" width="700">
 
 #### 14. heatedplate5.3.q890
 
@@ -66,7 +66,7 @@ Same as 5.3 using heat flux, q = 890 W/m^2 instead of power Q = 890 W
 
 This makes way more sense because now we get max temp of 301 K which is safe for any server
 
-![photo](heatedplate5.3-q890/PlotsAndVideos/BottomWallTempByTime.png)
+<img src="heatedplate5.3-q890/PlotsAndVideos/BottomWallTempByTime.png" width="700">
 
 #### 15. heatedplate6.1
 
@@ -78,11 +78,19 @@ Updated blockmesh so that heat only applies to middle area. middle 50 mm of tota
 
 uses Power of Q = 50 W
 
-![gif](heatedplate6.2/PlotsAndVideos/Temp.gif)
+<img src="heatedplate6.2/PlotsAndVideos/Temp.gif" width="700">
 
 #### 17 heatedplate 6.3
 
 New blockmesh for 3D modelling.
+
+<img src="heatedplate6.3/PlotsAndVideos/T.png" width="700">
+
+#### 18 heated plate 6.3 
+
+using zeroGradient temperature boundary condition for lower wall instead of vixed value.
+
+<img src="heatedplate6.3.2/PlotsAndVideos/T.png" width="700">
 
 ### Paraview
 
