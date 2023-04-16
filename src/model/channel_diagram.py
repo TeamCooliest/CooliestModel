@@ -41,9 +41,9 @@ def diagram(f, w, h, l_in, l_chip, l_out, t_in, t_chip, t_out):
     outer = [AB, AD, AM, BC, BN, CD, CO, DP, MN, MP, NO, OP]
     inner = [EF, EH, FG, GH, IJ, IL, JK, KL]
     ### CHIP
-    f.write('\\fill [opacity=0.75, fill=red!' + f'{20*l_out/(l_in+l_out)}' + '!white] (' + f'{A.x}' + ',' + f'{A.y}' + ') -- (' + f'{D.x}' + ',' + f'{D.y}' + ') -- (' + f'{H.x}' + ',' + f'{H.y}' + ') -- (' + f'{E.x}' + ',' + f'{E.y}' + ') -- cycle;\n')
+    f.write('\\fill [opacity=0.75, fill=red!15!white] (' + f'{A.x}' + ',' + f'{A.y}' + ') -- (' + f'{D.x}' + ',' + f'{D.y}' + ') -- (' + f'{H.x}' + ',' + f'{H.y}' + ') -- (' + f'{E.x}' + ',' + f'{E.y}' + ') -- cycle;\n')
     f.write('\\fill [opacity=0.75, fill=red!90!white] (' + f'{E.x}' + ',' + f'{E.y}' + ') -- (' + f'{H.x}' + ',' + f'{H.y}' + ') -- (' + f'{L.x}' + ',' + f'{L.y}' + ') -- (' + f'{I.x}' + ',' + f'{I.y}' + ') -- cycle;\n')
-    f.write('\\fill [opacity=0.75, fill=red!' + f'{20*l_in/(l_in+l_out)}' + '!white] (' + f'{I.x}' + ',' + f'{I.y}' + ') -- (' + f'{L.x}' + ',' + f'{L.y}' + ') -- (' + f'{P.x}' + ',' + f'{P.y}' + ') -- (' + f'{M.x}' + ',' + f'{M.y}' + ') -- cycle;\n')
+    f.write('\\fill [opacity=0.75, fill=red!15!white] (' + f'{I.x}' + ',' + f'{I.y}' + ') -- (' + f'{L.x}' + ',' + f'{L.y}' + ') -- (' + f'{P.x}' + ',' + f'{P.y}' + ') -- (' + f'{M.x}' + ',' + f'{M.y}' + ') -- cycle;\n')
     left  = [Node(np.linspace(EH.n1.x,EH.n2.x,9)[i],np.linspace(EH.n1.y,EH.n2.y,9)[i],0) for i in range(9)] + [Node(np.linspace(HL.n1.x,HL.n2.x,9)[i],np.linspace(HL.n1.y,HL.n2.y,9)[i],0) for i in range(9)]
     right = [Node(np.linspace(EI.n1.x,EI.n2.x,9)[i],np.linspace(EI.n1.y,EI.n2.y,9)[i],0) for i in range(9)] + [Node(np.linspace(IL.n1.x,IL.n2.x,9)[i],np.linspace(IL.n1.y,IL.n2.y,9)[i],0) for i in range(9)]
     for l, r in zip(left, right):

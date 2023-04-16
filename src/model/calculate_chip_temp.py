@@ -196,7 +196,7 @@ def calculate_parameters(w, h, l_in, l_chip, l_out, t_in, v_dot, q, fluid_name):
             t_out (float): Temperature exiting the channel (K)
         """
         # inlet segment
-        q_in = 0.10 * q * l_out / (l_in + l_out)
+        q_in = 0.10 * q * l_in / (l_in + l_out)
         inlet  = Segment(w, h, l_in,   t_in,        v_dot, q_in,   fluid_name)
         inlet.calculate_wall_temp()
 
@@ -206,7 +206,7 @@ def calculate_parameters(w, h, l_in, l_chip, l_out, t_in, v_dot, q, fluid_name):
         chip.calculate_wall_temp()
 
         # outlet segment
-        q_out = 0.10 * q * l_in / (l_in + l_out)
+        q_out = 0.10 * q * l_out / (l_in + l_out)
         outlet = Segment(w, h, l_out,  chip.t_out,  v_dot, q_out,  fluid_name)
         outlet.calculate_wall_temp()
 
