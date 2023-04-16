@@ -8,11 +8,11 @@
 Build  : 7-49b2b3b8b082
 Exec   : blockMesh
 Date   : Apr 14 2023
-Time   : 09:29:07
-Host   : "c401-101.stampede2.tacc.utexas.edu"
-PID    : 162238
+Time   : 12:51:55
+Host   : "c401-122.stampede2.tacc.utexas.edu"
+PID    : 32945
 I/O    : uncollated
-Case   : /home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.3.2
+Case   : /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2
 nProcs : 1
 sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
 fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
@@ -22,9 +22,9 @@ allowSystemOperations : Allowing user-supplied system call operations
 Create time
 
 Deleting polyMesh directory
-    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.3.2/constant/polyMesh"
+    "/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2/constant/polyMesh"
 Creating block mesh from
-    "/home1/08376/lew2547/seniordesign/CooliestModel/src/CFD/heatedplate6.3.2/system/blockMeshDict"
+    "/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2/system/blockMeshDict"
 Creating block edges
 No non-planar block faces defined
 Creating topology blocks

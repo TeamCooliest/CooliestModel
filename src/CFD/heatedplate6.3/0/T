@@ -46,8 +46,8 @@ boundaryField
     heatedWall
     {
         type            externalWallHeatFluxTemperature;
-        mode            flux;
-        q               1;
+        mode            power;
+        Q               5;
         kappaMethod     fluidThermo;
         value           $internalField;
     }
