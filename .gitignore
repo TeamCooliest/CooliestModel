@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# CFD rhoPimpleFoam (file is often way too big)
+*.rhoPimpleFoam
