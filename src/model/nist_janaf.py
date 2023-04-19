@@ -23,25 +23,18 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
 
 
     """
+    if fluid_name == "sf6":
+        id = "C2551624"
 
-    filepath = f"../../data/model{fluid_name}.csv"
-    table = pd.read_csv(filepath)
+    url = f"https://webbook.nist.gov/cgi/fluid.cgi?T={temp}&PLow={pressure}&PHigh={pressure}&PInc=0&Digits=5&ID={id}&Action=Load&Type=IsoTherm&TUnit=K&PUnit=MPa&DUnit=kg%2Fm3&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm&RefState=DEF"
+    df = pd.read_html(url)
+    table = df[0]
 
-    if temp in table["temp"].values():
-        # return
-        cp = table.loc[table["t"] == temp, "cp"].values[0] * 1000
-        k = table.loc[table["t"] == temp, "k"].values[0]
-        nu = table.loc[table["t"] == temp, "nu"].values[0]
-        rho = table.loc[table["t"] == temp, "rho"].values[0]
-        nu_k = nu / rho
-        pr = nu * cp / k
-
-    else:
-        cp = np.interp(temp, table["t"], table["cp"]) * 1000
-        k = np.interp(temp, table["t"], table["k"])
-        rho = np.interp(temp, table["t"], table["rho"])
-        nu_k = nu / rho
-        pr = nu * cp / k
-    # interpolate
+    cp = table.loc[table["Temperature (K)"] == temp, "Cp (J/mol*K)"].values[0] * 1000
+    k = table.loc[table["Temperature (K)"] == temp, "Therm. Cond. (W/m*K)"].values[0]
+    nu = table.loc[table["Temperature (K)"] == temp, "Viscosity (uPa*s)"].values[0]
+    rho = table.loc[table["Temperature (K)"] == temp, "Density (kg/m3)"].values[0]
+    nu_k = nu / rho
+    pr = nu * cp / k
 
     return cp, k, pr, nu_k, rho
