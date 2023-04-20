@@ -1,0 +1,6 @@
+/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2
+Fri Apr 14 12:51:50 CDT 2023
+Running blockMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2
+Running checkMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2
+Running rhoPimpleFoam on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/heatedplate6.3.2
+Fri Apr 14 13:19:56 CDT 2023
