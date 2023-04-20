@@ -6,6 +6,9 @@
 # C extensions
 *.so
 
+# log.rhoPimpleFoam
+*.rhoPimpleFoam
+
 # Distribution / packaging
 .Python
 build/

@@ -1,0 +1,82 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-49b2b3b8b082
+Exec   : blockMesh
+Date   : Apr 20 2023
+Time   : 10:27:19
+Host   : "c421-063.stampede2.tacc.utexas.edu"
+PID    : 233232
+I/O    : uncollated
+Case   : /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_240
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Deleting polyMesh directory
+    "/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_240/constant/polyMesh"
+Creating block mesh from
+    "/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_240/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 1
+		Number of boundary faces : 10
+		Number of defined boundary faces : 10
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.02 .. 0.02
+        j : 0.0166667 .. 0.0166667
+        k : 0.15
+    Block 1 cell size :
+        i : 0.075 .. 0.075
+        j : 0.0166667 .. 0.0166667
+        k : 0.15
+Creating cells
+Creating patches
+
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 -0.15) (19.2 0.2 0)
+  nPoints: 7826
+  nCells: 3600
+  nFaces: 14712
+  nInternalFaces: 6888
+----------------
+Patches
+----------------
+  patch 0 (start: 6888 size: 300) name: upperWall
+  patch 1 (start: 7188 size: 60) name: lowerWall
+  patch 2 (start: 7248 size: 240) name: heatedWall
+  patch 3 (start: 7488 size: 12) name: inlet
+  patch 4 (start: 7500 size: 12) name: outlet
+  patch 5 (start: 7512 size: 7200) name: frontAndBack
+
+End
+
