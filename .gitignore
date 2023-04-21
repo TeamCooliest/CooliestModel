@@ -4,9 +4,12 @@
 *$py.class
 
 # Mac files
-.DS_Store
+*.DS_Store
 # C extensions
 *.so
+
+# log.rhoPimpleFoam
+*.rhoPimpleFoam
 
 # Distribution / packaging
 .Python

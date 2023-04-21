@@ -1,0 +1,6 @@
+/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/validation-var-Q/pipe_validation_startQ1000
+Thu Apr 20 17:55:32 CDT 2023
+Running blockMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/validation-var-Q/pipe_validation_startQ1000
+Running checkMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/validation-var-Q/pipe_validation_startQ1000
+Running rhoPimpleFoam on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/validation-var-Q/pipe_validation_startQ1000
+Thu Apr 20 19:42:59 CDT 2023
