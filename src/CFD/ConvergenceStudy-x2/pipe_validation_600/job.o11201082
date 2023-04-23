@@ -1,0 +1,6 @@
+/work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_600
+Fri Apr 21 12:36:15 CDT 2023
+Running blockMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_600
+Running checkMesh on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_600
+Running rhoPimpleFoam on /work2/08376/lew2547/stampede2/CooliestModel/src/CFD/ConvergenceStudy-x2/pipe_validation_600
+Fri Apr 21 18:15:22 CDT 2023
