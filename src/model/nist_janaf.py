@@ -26,7 +26,9 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
     if fluid_name == "sf6":
         id = "C2551624"
 
-    url = f"https://webbook.nist.gov/cgi/fluid.cgi?T={temp}&PLow={pressure}&PHigh={pressure}&PInc=0&Digits=5&ID={id}&Action=Load&Type=IsoTherm&TUnit=K&PUnit=MPa&DUnit=kg%2Fm3&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm&RefState=DEF"
+    pressure = pressure / 1000000
+
+    url = f"https://webbook.nist.gov/cgi/fluid.cgi?T={temp}&PLow={pressure}&PHigh={pressure}&PInc=&Digits=5&ID={id}&Action=Load&Type=IsoTherm&TUnit=K&PUnit=MPa&DUnit=kg%2Fm3&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm&RefState=DEF"
     df = pd.read_html(url)
     table = df[0].iloc[0, :]
 
