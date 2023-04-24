@@ -28,12 +28,12 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
 
     url = f"https://webbook.nist.gov/cgi/fluid.cgi?T={temp}&PLow={pressure}&PHigh={pressure}&PInc=0&Digits=5&ID={id}&Action=Load&Type=IsoTherm&TUnit=K&PUnit=MPa&DUnit=kg%2Fm3&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm&RefState=DEF"
     df = pd.read_html(url)
-    table = df[0]
+    table = df[0].iloc[0, :]
 
-    cp = table.loc[table["Temperature (K)"] == temp, "Cp (J/mol*K)"].values[0] * 1000
-    k = table.loc[table["Temperature (K)"] == temp, "Therm. Cond. (W/m*K)"].values[0]
-    nu = table.loc[table["Temperature (K)"] == temp, "Viscosity (uPa*s)"].values[0]
-    rho = table.loc[table["Temperature (K)"] == temp, "Density (kg/m3)"].values[0]
+    cp = table["Cp (J/mol*K)"] * 1000
+    k = table["Therm. Cond. (W/m*K)"]
+    nu = table["Viscosity (uPa*s)"]
+    rho = table["Density (kg/m3)"]
     nu_k = nu / rho
     pr = nu * cp / k
 
