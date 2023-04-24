@@ -11,9 +11,9 @@
 ### #SBATCH -p development          # Queue (partition) name
 ### #SBATCH -p skx-normal          # Queue (partition) name
 
-#SBATCH -N 1               # Total # of nodes
-#SBATCH -n 1               # Total # of mpi tasks
-#SBATCH -t 10:00:00        # Run time (hh:mm:ss)
+#SBATCH -N 5               # Total # of nodes
+#SBATCH -n 5               # Total # of mpi tasks
+#SBATCH -t 17:00:00        # Run time (hh:mm:ss)
 
 ###  #SBATCH --mail-user=lukewilson@utexas.edu
 ###  #SBATCH --mail-type=all    # Send email at begin and end of job
