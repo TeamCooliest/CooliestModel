@@ -25,6 +25,7 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
     """
     if fluid_name == "sf6":
         id = "C2551624"
+        molar_mass = 146.0554192  # grams per mole
 
     pressure = pressure / 1000000
 
@@ -32,7 +33,7 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
     df = pd.read_csv(url, delimiter="\t")
     table = df.iloc[0, :]
 
-    cp = table["Cp (J/mol*K)"] * 1000
+    cp = table["Cp (J/mol*K)"] * 1000 / molar_mass
     k = table["Therm. Cond. (W/m*K)"]
     nu = table["Viscosity (uPa*s)"]
     rho = table["Density (kg/m3)"]
