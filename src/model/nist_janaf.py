@@ -30,7 +30,7 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
 
     url = f"https://webbook.nist.gov/cgi/fluid.cgi?T={temp}&PLow={pressure}&PHigh={pressure}&PInc=&Digits=5&ID={id}&Action=Data&Type=IsoTherm&TUnit=K&PUnit=MPa&DUnit=kg%2Fm3&HUnit=kJ%2Fmol&WUnit=m%2Fs&VisUnit=uPa*s&STUnit=N%2Fm&RefState=DEF"
     df = pd.read_csv(url, delimiter="\t")
-    table = df[0].iloc[0, :]
+    table = df.iloc[0, :]
 
     cp = table["Cp (J/mol*K)"] * 1000
     k = table["Therm. Cond. (W/m*K)"]
