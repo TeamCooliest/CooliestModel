@@ -35,7 +35,7 @@ def get_fluid_properties_janaf(fluid_name, temp, pressure):
 
     cp = table["Cp (J/mol*K)"] * 1000 / molar_mass
     k = table["Therm. Cond. (W/m*K)"]
-    nu = table["Viscosity (uPa*s)"]
+    nu = table["Viscosity (uPa*s)"] / 1e6
     rho = table["Density (kg/m3)"]
     nu_k = nu / rho
     pr = nu * cp / k
